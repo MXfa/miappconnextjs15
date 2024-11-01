@@ -17,7 +17,7 @@ export default async function Page({
   
 // Asegúrate de esperar a searchParams
 
-const { query = '', page = '1' } = await searchParams || {};
+const { query = '' } = await searchParams || {};
 const customers = await fetchFilteredCustomers(query);
 
 
