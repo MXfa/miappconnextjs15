@@ -3,7 +3,7 @@ import { fetchFilteredCustomers } from '@/lib/actions/customer.actions'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Customers',
+  title: 'Customers'
 }
 
 export default async function Page({
@@ -11,7 +11,7 @@ export default async function Page({
 }: {
   searchParams?: {
     query?: string
-    page?: string
+   
   }
 }) {
   
