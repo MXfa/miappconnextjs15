@@ -2,10 +2,8 @@
 
 const CACHE_NAME = 'static-cache-v1';
 const STATIC_ASSETS = [
-    '/index.html',
-    '/styles.css',
-    '/script.js',
-    '/images/logo.png',
+  
+    '/images/icons/icon-48x48.png',
     // Agrega aquí otros recursos estáticos que necesites
 ];
 
