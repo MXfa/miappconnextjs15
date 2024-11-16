@@ -7,8 +7,9 @@ export const metadata: Metadata = {
 };
 
 export default async function Page({ searchParams }: { searchParams: Record<string, string | undefined> }) {
-  // Usa una estructura que no dependa de valores síncronos
-  const query = searchParams.query ?? ''; // Maneja undefined de forma segura
+  // Espera a que se resuelva searchParams
+  const resolvedSearchParams = await searchParams;
+  const query = resolvedSearchParams.query ?? ''; // Maneja undefined de forma segura
   const customers = await fetchFilteredCustomers(query); // Recupera datos con el query
   
   return (
