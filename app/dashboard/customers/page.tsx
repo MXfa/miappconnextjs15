@@ -6,17 +6,11 @@ export const metadata: Metadata = {
   title: 'Customers',
 };
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams?: {
-    query?: string;
-  };
-}) {
-  // No es necesario usar await aquí
-  const query = searchParams?.query || '';
-  const customers = await fetchFilteredCustomers(query);
-
+export default async function Page({ searchParams }: { searchParams: Record<string, string | undefined> }) {
+  // Usa una estructura que no dependa de valores síncronos
+  const query = searchParams.query ?? ''; // Maneja undefined de forma segura
+  const customers = await fetchFilteredCustomers(query); // Recupera datos con el query
+  
   return (
     <main>
       <CustomersTable customers={customers} />
